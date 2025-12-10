@@ -30,12 +30,12 @@ jobs:
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       # this is a new step
-      - name: dotnet install entity framework
-        run: dotnet tool install -g dotnet-ef --version 8.*
+      #- name: dotnet install entity framework
+      #  run: dotnet tool install -g dotnet-ef --version 8.*
 
       # this is a new step
-      - name: generate database migration
-        run: dotnet ef migrations bundle --runtime linux-x64 -o ${{env.DOTNET_ROOT}}/myapp/migrationsbundle
+      #- name: generate database migration
+      #  run: dotnet ef migrations bundle --runtime linux-x64 -o ${{env.DOTNET_ROOT}}/myapp/migrationsbundle
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
