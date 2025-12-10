@@ -28,16 +28,6 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-      - name: dotnet install
-        run: dotnet tool install -g dotnet-ef --version 8.*
-      - name: dotnet migrations
-        run: dotnet ef migrations bundle --runtime linux-x64 -o ${{env.DOTNET_ROOT}}/myapp/migrationsbundle
->>>>>>> c6c52e6 (configure azure database and cache connections)
-=======
->>>>>>> 5f019e6 (commit)
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -61,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A383317BD1FE4D4284D1117A9CE8CBAC }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2549EF9EA69440479F603F307C9B1963 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_38731236A37F475DBDAC45CB9E577442 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_02457553B80E40D0B6C01A6F8CA0BACF }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_37790702847B4BBBABB3FCCE21E9AC18 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_849EF9C2C6464FB28FE68CD5BD1501D4 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -72,7 +62,4 @@ jobs:
           app-name: 'msdocs-core-sql-XYZDSC'
           slot-name: 'Production'
           package: .
-
           
-
-
